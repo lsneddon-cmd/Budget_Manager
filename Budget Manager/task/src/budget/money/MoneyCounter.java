@@ -1,4 +1,6 @@
-package budget;
+package budget.money;
+
+import budget.money.Money;
 
 import java.util.ArrayList;
 import java.util.List;
