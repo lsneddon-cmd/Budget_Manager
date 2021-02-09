@@ -17,6 +17,7 @@ public class Menu {
             try {
                 MenuOption.printMenu();
                 choice = MenuOption.values()[Integer.parseInt(scanner.nextLine())];
+                System.out.println();
 
                 switch (choice) {
                     case EXIT:
@@ -26,6 +27,7 @@ public class Menu {
                         System.out.println("Enter income:");
                         double income = Double.parseDouble(scanner.nextLine());
                         balanceSheet.addIncome(new Money(income));
+                        System.out.println();
                         break;
                     case ADD_PURCHASE:
                         System.out.println("Enter purchase name:");
@@ -33,12 +35,15 @@ public class Menu {
                         System.out.println("Enter its price:");
                         double purchase = Double.parseDouble(scanner.nextLine());
                         balanceSheet.addPurchase(itemDescription, new Money(purchase));
+                        System.out.println();
                         break;
                     case SHOW_PURCHASE_LIST:
                         balanceSheet.printPurchases();
+                        System.out.println();
                         break;
                     case BALANCE:
                         balanceSheet.printBalance();
+                        System.out.println();
                 }
             } catch (IndexOutOfBoundsException e) {
                 System.out.println("Inappropriate input");
